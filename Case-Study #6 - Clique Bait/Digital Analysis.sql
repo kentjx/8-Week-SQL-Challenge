@@ -26,7 +26,7 @@ from temp
 --Ans: 3.56
 
 --What is the unique number of visits by all users per month?
-Select u.user_id, count(distinct visit_id) as unique_visits
+Select extract(month from event_time), count(distinct visit_id) as unique_visits
 from clique_bait.events e
 inner join clique_bait.users u on e.cookie_id = u.cookie_id
 group by 1
