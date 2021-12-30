@@ -78,7 +78,7 @@ from temp_table
 group by 1 
 ) 
 
---Which product had the most views, cart adds and purchases?
+- Which product had the most views, cart adds and purchases?
 select page_name, count_view
 from 
 temp_table 
@@ -104,7 +104,7 @@ limit 1
 ![image](https://user-images.githubusercontent.com/87967846/147762503-6716922f-c788-4dec-a19c-8e14cd300f98.png)
 
 
---Which product was most likely to be abandoned? 
+- Which product was most likely to be abandoned? 
 ```sql
 select page_name, count_add_to_cart_no_purchase
 from temp_table 
@@ -114,7 +114,7 @@ limit 1
 ![image](https://user-images.githubusercontent.com/87967846/147762549-efadf6eb-2ab2-41c2-99c1-6314e4294f0e.png)
 
 
---Which product had the highest view to purchase percentage? 
+- Which product had the highest view to purchase percentage? 
 ```sql
 select page_name, round(cast(count_purchased as decimal(10,2))/cast(count_view as decimal(10,2)) * 100,2)  as pct_view_to_purchase 
 from temp_table
@@ -124,8 +124,8 @@ limit 1
 ![image](https://user-images.githubusercontent.com/87967846/147762604-fcc80afb-787f-4cbc-adf6-f3ce286e4951.png)
 
 ```sql
---What is the average conversion rate from view to cart add? 
---What is the average conversion rate from cart add to purchase? 
+- What is the average conversion rate from view to cart add? 
+- What is the average conversion rate from cart add to purchase? 
 select round(avg(cast(count_add_to_cart as decimal(10,2))/cast(count_view as decimal(10,2)) * 100),2) as average_conversion_view2cart , 
 round(avg(cast(count_purchased as decimal(10,2))/cast(count_add_to_cart as decimal(10,2)) * 100),2) as average_converison_cart2purchase
 from temp_table 
