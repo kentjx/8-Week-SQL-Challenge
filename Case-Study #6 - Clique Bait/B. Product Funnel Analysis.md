@@ -9,13 +9,13 @@ Using a single SQL query - create a new output table which has the following det
 
 Use your 2 new output tables - answer the following questions:
 
-Which product had the most views, cart adds and purchases?
-Which product was most likely to be abandoned?
-Which product had the highest view to purchase percentage?
-What is the average conversion rate from view to cart add?
-What is the average conversion rate from cart add to purchase? 
+- Which product had the most views, cart adds and purchases?
+- Which product was most likely to be abandoned?
+- Which product had the highest view to purchase percentage?
+- What is the average conversion rate from view to cart add?
+- What is the average conversion rate from cart add to purchase? 
 
-
+```sql
 With product_view as (
 select ph.page_name, count(visit_id) as count_view
 from clique_bait.events e
@@ -84,7 +84,7 @@ from
 temp_table 
 order by 2 desc 
 limit 1 
-
+```
 ![image](https://user-images.githubusercontent.com/87967846/147762379-11971639-4f96-4c1e-933d-22a05a5e12f3.png)
 
 
