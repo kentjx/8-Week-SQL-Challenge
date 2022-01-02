@@ -42,7 +42,7 @@ SELECT * FROM
 runner_orders2
 ```
 
-----------------PIZZA METRICS---------------- 
+# Pizza Metrics
  1. How many pizzas were ordered?
  ```sql 
  SELECT COUNT(order_id) AS Total_pizza_ordered 
