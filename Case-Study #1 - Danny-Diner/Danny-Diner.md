@@ -1,4 +1,4 @@
-  ---- 1. What is the total amount each customer spent at the restaurant?--
+  1. What is the total amount each customer spent at the restaurant? 
   
   ```sql
   SELECT s.customer_id, SUM(m.price) AS Total_Spent 
@@ -10,7 +10,7 @@
   ``` 
   ![image](https://user-images.githubusercontent.com/87967846/147865474-5e0b14cf-bb4d-4934-a44b-c3de7b90fb28.png)
 
-  -- 2. How many days has each customer visited the restaurant?--
+  2. How many days has each customer visited the restaurant?
   
   ```sql
   SELECT customer_id, COUNT(Distinct order_date)
@@ -21,7 +21,7 @@
  
  ![image](https://user-images.githubusercontent.com/87967846/147865499-0f6dbffb-11d2-42d9-954e-cadebced7712.png)
 
- -- 3. What was the first item from the menu purchased by each customer?
+ 3. What was the first item from the menu purchased by each customer?
  ```sql
 SELECT * 
 FROM 
@@ -36,9 +36,9 @@ WHERE rn = 1
 ```
 ![image](https://user-images.githubusercontent.com/87967846/147865587-a653891e-c45d-4254-bbff-c039d4ce0f63.png)
 
--- 4. What is the most purchased item on the menu and how many times was it purchased by all customers?
+4. What is the most purchased item on the menu and how many times was it purchased by all customers?
 
--------- Identifying which item is the most purchased on the menu----------------------- 
+----------------------- Identifying which item is the most purchased on the menu ----------------------- 
 ```sql
 SELECT * 
 FROM
@@ -53,7 +53,7 @@ WHERE rnk = 1
 ```
 ![image](https://user-images.githubusercontent.com/87967846/147865609-4a633467-0ba5-4c26-a1e3-2fd294352d24.png)
 
---------- Identifying how many times it was purchased by all the customers--------------------------
+-------------------------- Identifying how many times it was purchased by all the customers --------------------------
 ```sql
 SELECT * FROM 
 (
@@ -67,7 +67,7 @@ SELECT * FROM
 ```
 ![image](https://user-images.githubusercontent.com/87967846/147865619-e53dadf3-1c37-4b22-b8dd-5eeb9176d74d.png)
 
- -- 5. Which item was the most popular for each customer?
+ 5. Which item was the most popular for each customer?
 ```sql
 SELECT * 
 FROM 
@@ -99,7 +99,7 @@ FROM favourites
 WHERE rnk = 1;
 ```
 
--- 6. Which item was purchased first by the customer after they became a member?
+6. Which item was purchased first by the customer after they became a member?
 
 ```sql
 SELECT *
@@ -134,7 +134,7 @@ SELECT *
 FROM first_order 
 WHERE rn = 1;
 ```
--- 7. Which item was purchased just before the customer became a member?
+7. Which item was purchased just before the customer became a member?
 
 ```sql
 WITH product_before_member AS
@@ -157,7 +157,7 @@ WHERE rn = 1;
 ![image](https://user-images.githubusercontent.com/87967846/147865668-96c3e242-d9a2-462a-9ded-07aa69ca8b53.png)
 
 
--- 8. What is the total items and amount spent for each member before they became a member?
+8. What is the total items and amount spent for each member before they became a member?
 
 ```sql
 SELECT s.customer_id, COUNT(Distinct m.product_name) AS unique_items,
@@ -173,7 +173,7 @@ GROUP BY s.customer_id
 
 ![image](https://user-images.githubusercontent.com/87967846/147865678-c42d0b4c-4b85-4f39-a51e-69aeee9f9240.png)
 
--- 9.  If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
+9.  If each $1 spent equates to 10 points and sushi has a 2x points multiplier - how many points would each customer have?
 
 ```sql
 SELECT s.customer_id, 
@@ -187,7 +187,7 @@ ORDER BY 1
 ![image](https://user-images.githubusercontent.com/87967846/147865691-e6aeea8e-838e-4503-9902-0fdbc17968dc.png)
 
 
--- 10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
+10. In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi - how many points do customer A and B have at the end of January?
 ```sql
 WITH CTE AS 
 (
@@ -210,8 +210,8 @@ GROUP BY 1
 
 -----Bonus Question------ 
 
---The following questions are related creating basic data tables that Danny and his team can use to quickly derive insights without needing to join the underlying tables using SQL.
---Recreate the following table output using the available data -> (with member (Y/N))
+The following questions are related creating basic data tables that Danny and his team can use to quickly derive insights without needing to join the underlying tables using SQL.
+Recreate the following table output using the available data -> (with member (Y/N))
 
 ```sql
 SELECT s.customer_id, s.order_date, m.product_name, m.price, 
@@ -227,8 +227,8 @@ ORDER BY s.customer_id ASC, s.order_date ASC, m.product_name ASC
 
 -----Bonus Question 2 ------ 
 
---Danny also requires further information about the ranking of customer products, but he purposely does not need the ranking for non-member purchases so he expects 
---null ranking values for the records when customers are not yet part of the loyalty program.
+Danny also requires further information about the ranking of customer products, but he purposely does not need the ranking for non-member purchases so he expects 
+null ranking values for the records when customers are not yet part of the loyalty program.
 
 ```sql
 WITH CTE2 AS
@@ -247,4 +247,5 @@ SELECT *, CASE WHEN member = 'N' THEN NULL ELSE dense_rank() over (partition by 
 FROM CTE2
 ```
 
-![image](https://user-images.githubusercontent.com/87967846/147865763-65185b6e-b946-4601-a7e4-d4a61696e81c.png)
+![image](https://user-images.githubusercontent.com/87967846/147865893-64387ef6-2e83-41f0-960a-4989000b824b.png)
+
