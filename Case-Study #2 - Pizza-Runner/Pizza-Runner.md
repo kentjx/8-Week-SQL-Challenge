@@ -1,3 +1,12 @@
+
+# Data Cleaning 
+ - 1st Table to be cleaned -> customer_orders table. In the customer_orders Table, the exclusion and extras column, 
+ - there are missing/blank spaces and null values. 
+
+ - 2nd Table to be cleaned -> runner_orders. In the runner_orders Table, the pickup_time contained 'null' values. 
+ - distance contained units which ideally should be interger, duration should also remove units, lastly, cancellation contain 'null' values and [null] values. 
+ 
+
 ```sql 
 DROP TABLE IF EXISTS customer_orders2;
 CREATE TEMP TABLE customer_orders2 AS 
