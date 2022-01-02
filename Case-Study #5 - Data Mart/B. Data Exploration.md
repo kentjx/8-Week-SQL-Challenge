@@ -112,11 +112,12 @@ and demographic != 'unknown'
 group by 1 
 order by 2 desc 
 -- Families 
+```
 
 ![image](https://user-images.githubusercontent.com/87967846/147879478-3d7d3765-d6e8-40c0-8fdb-cdd2bdc610d8.png)
 
 
-
+```sql
 select age_band, sum(sales) as total_sales 
 from data_mart.weekly_sales2
 where platform = 'Retail'
