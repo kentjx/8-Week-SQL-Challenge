@@ -113,7 +113,8 @@ group by 1
 order by 2 desc 
 -- Families 
 
-![image](https://user-images.githubusercontent.com/87967846/147879380-b8cea2a9-3010-4924-80ab-bd97fed30f8d.png)
+![image](https://user-images.githubusercontent.com/87967846/147879478-3d7d3765-d6e8-40c0-8fdb-cdd2bdc610d8.png)
+
 
 
 select age_band, sum(sales) as total_sales 
