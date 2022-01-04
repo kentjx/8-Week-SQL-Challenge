@@ -40,20 +40,23 @@ from data_mart.weekly_sales2
 group by 1 
 order by 1 
 ```
-![image](https://user-images.githubusercontent.com/87967846/147879245-ae50d1db-e4b3-4cdb-90a4-07115b1b9e14.png)
+![image](https://user-images.githubusercontent.com/87967846/148009840-ceaff8d3-a5fb-481a-b744-4e43e3f0c413.png)
+
 
 
 6. What is the total sales for each region for each month?
 
 ```sql
-select region, sum(sales) as total_sales
+select region, month_number, sum(sales) as total_sales
 from data_mart.weekly_sales2
-group by 1 
+group by 1,2
+order by 1,2 
 ```
+![image](https://user-images.githubusercontent.com/87967846/148009930-85982556-c343-49b1-aff3-d1241cb727eb.png)
 
-![image](https://user-images.githubusercontent.com/87967846/147879249-122f4bd8-cf13-4495-9a13-19323e44ecc6.png)
 
-7. What is the total count of transactions for each platform
+
+7. What is the total count of transactions for each platform?
 
 ```sql
 select platform, count(transactions) as count_transactions
