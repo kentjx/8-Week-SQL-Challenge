@@ -57,7 +57,7 @@ group by 1
 ```
 ![image](https://user-images.githubusercontent.com/87967846/147879622-2c0336fa-e70f-4748-9282-766d81575bb3.png)
 
-
+```sql
 with temp2 as ( 
 select year_number, sum(case when week_number < 25 then sales end) as before_sales, 
 sum(case when week_number >= 25 then sales end) as after_sales
@@ -68,6 +68,7 @@ order by 1
 select *, (after_sales - before_sales) as difference, 
 round((cast(after_sales as numeric) - cast(before_sales as numeric))/before_sales * 100,2) as pct_change
 from temp2
+```
 
 ![image](https://user-images.githubusercontent.com/87967846/147879627-ea539307-66e6-492f-9cb9-a112b767482e.png)
 
