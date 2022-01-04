@@ -30,7 +30,7 @@ order by 1
 ```
 ![image](https://user-images.githubusercontent.com/87967846/147879199-c12e34a8-a79b-4919-8983-a3acd5d7911c.png)
 
--- week 1 to week 12 and week 37 to week 52 is missing.
+- Week 1 to week 12 and week 37 to week 52 is missing.
 
 4. How many total transactions were there for each year in the dataset?
 
