@@ -25,7 +25,7 @@ group by prod_id
 order by sum(rev) desc 
 limit 3 
 ```
-
+![image](https://user-images.githubusercontent.com/87967846/148577972-66fcbf8e-2c59-48dc-ac3a-ac486f127945.png)
 
 
 - What is the total quantity, revenue and discount for each segment?
@@ -55,6 +55,8 @@ order by 1
 
 select * from segment_group
 ```
+![image](https://user-images.githubusercontent.com/87967846/148578036-7716101b-9b74-44a0-b126-38b9657d13b8.png)
+
 - What is the top selling product for each segment?
 
 ```sql
@@ -89,6 +91,9 @@ select * from
 segment_top 
 where rank = 1 
 ```
+![image](https://user-images.githubusercontent.com/87967846/148578119-68c27fd0-affe-4bb4-83f1-ed90ff1531fa.png)
+
+
 - What is the percentage split of revenue by product for each segment?
 
 ```sql
@@ -121,6 +126,10 @@ select *, round(total_rev / sum_rev,2) as pct
 from segment_group_1
 
 ```
+![image](https://user-images.githubusercontent.com/87967846/148578184-2adfcb4f-5426-4fd7-b400-c99b920654f6.png)
+
+
+
 - What is the percentage split of revenue by segment for each category?
 
 ```sql
@@ -152,6 +161,9 @@ from category_group
 select *, round(total_rev / sum_rev,2) as pct 
 from category_group_1
 ```
+![image](https://user-images.githubusercontent.com/87967846/148578254-7bfaa4d5-67b5-49de-92e6-f87c66815481.png)
+
+
 - What is the total transaction “penetration” for each product? (hint: penetration = number of transactions where at least 1 quantity of a product was purchased divided by total number of transactions)
 
 ```sql
@@ -164,6 +176,9 @@ select prod_id, count(prod_id) as count_prod_id, round(cast(count(prod_id) as nu
 from balanced_tree.sales
 group by 1 
 ```
+![image](https://user-images.githubusercontent.com/87967846/148578355-23c62b58-dcdc-46ce-9aad-1dfeed4280f2.png)
+
+
 - What is the most common combination of at least 1 quantity of any 3 products in a 1 single transaction?
 
 WIP 
