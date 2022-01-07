@@ -42,7 +42,7 @@ select * from temp
 ``` 
 ![image](https://user-images.githubusercontent.com/87967846/148576866-1c313e08-e7d8-44df-8b9b-d23569ab7e0f.png)
 
-This will allow the transpose of the above table for easier reading. If the requirements is fine with rows instead of columns, the prior table will do just fine.*/ 
+This will allow the transpose of the above table for easier reading. If the requirements is fine with rows instead of columns, the prior table will do just fine.
 
 ```sql
 SELECT
