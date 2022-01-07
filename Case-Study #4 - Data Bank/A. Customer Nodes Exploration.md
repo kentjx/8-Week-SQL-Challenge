@@ -51,7 +51,7 @@ from date_diff
 
 ![image](https://user-images.githubusercontent.com/87967846/148573336-51f689ae-ef22-41b2-a784-2823ba09fb26.png)
 
---What is the median, 80th and 95th percentile for this same reallocation days metric for each region?
+- What is the median, 80th and 95th percentile for this same reallocation days metric for each region?
 
 ```sql 
 with date_diff as (
