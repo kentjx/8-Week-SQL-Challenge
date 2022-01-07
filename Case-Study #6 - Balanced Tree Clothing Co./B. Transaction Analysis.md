@@ -40,3 +40,14 @@ from pct
 ) 
 select * from temp
 ``` 
+![image](https://user-images.githubusercontent.com/87967846/148576866-1c313e08-e7d8-44df-8b9b-d23569ab7e0f.png)
+
+This will allow the transpose of the above table for easier reading. If the requirements is fine with rows instead of columns, the prior table will do just fine.*/ 
+
+```sql
+SELECT
+   unnest(array['avg_unique_product_count_per_txn', 'q1_pct', 'q2_pct', 'q3_pct', 'avg_discount_value_per_txn', 'member_txn_count', 'nonmember_txn_count', 'member_avg_rev', 'nonmember_avg_rev']) AS "Metrics",
+   unnest(array[avg_unique_product_count_per_txn, q1_pct, q2_pct, q3_pct, avg_discount_value_per_txn, member_txn_count, nonmember_txn_count, member_avg_rev, nonmember_avg_rev]) AS "Values"
+FROM temp
+```
+![image](https://user-images.githubusercontent.com/87967846/148576984-b28e5da6-3cda-41a2-904e-eeefebfe348d.png)
