@@ -46,10 +46,10 @@ select round(cast(count(case when interest_id is null then percentile_ranking en
 from fresh_segments.interest_metrics 
 
 - Approximately 8.4% is nulls. 
-
+```sql
 DELETE FROM fresh_segments.interest_metrics
 WHERE interest_id IS NULL;
-
+```
 - How many interest_id values exist in the fresh_segments.interest_metrics table but not in the fresh_segments.interest_map table? What about the other way around?
 
 ```sql
