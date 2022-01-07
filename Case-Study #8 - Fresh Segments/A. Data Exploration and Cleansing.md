@@ -42,8 +42,10 @@ or percentile_ranking is null
 - The null values comes from the columns _month, _year, month_year and interest_id. Wihtout the interest_id, there is no meaning to the dataset hence I will drop the null values. 
 However, lets first take a look the total number of nulls.
 
+```sql
 select round(cast(count(case when interest_id is null then percentile_ranking end) as numeric) / cast(count(percentile_ranking) as numeric),3) * 100 as null_pct 
 from fresh_segments.interest_metrics 
+```
 
 - Approximately 8.4% is nulls. 
 ```sql
